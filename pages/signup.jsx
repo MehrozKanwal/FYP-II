@@ -5,6 +5,8 @@ import signupImg from "../assets/signup.gif"
 import logo from "../assets/logo.png"
 import { HiMail } from "react-icons/hi";
 import {RiBankFill} from "react-icons/ri";
+import {MdError} from "react-icons/md";
+
 import {
     FaUserCircle,
     FaPhoneAlt,
@@ -60,9 +62,14 @@ function signup() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                </label>
-                <p className='text-error font-semibold mt-2 text-center mb-0'>{errors.fullName}</p>
+                </label> 
               </div>
+              {errors.fullName && touched.fullName ?(
+                  <p className="text-error font-semibold flex items-center  ml-4 mb-0">
+                  <MdError />
+                  {errors.fullName}
+                  </p>
+                ): null}
               <div className="e-mail">
                 {/* <label className='text-left text-xl pl-4 my-10'> E-mail</label> */}
                 <label class="relative block">
@@ -79,9 +86,14 @@ function signup() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                </label>
-                <p className='text-error font-semibold mt-2 text-center mb-0'>{errors.email}</p>
+                </label>                
               </div>
+              {errors.email && touched.email ?(
+                  <p className="text-error font-semibold flex items-center  ml-4 mb-0">
+                  <MdError />
+                  {errors.email}
+                </p>
+                ): null}
               <div className="phone">
                 {/* <label className='text-left text-xl pl-4 my-10'>Phone</label> */}
                 <label class="relative block">
@@ -99,10 +111,15 @@ function signup() {
                     onBlur={handleBlur}
                   />
                 </label>
-                <p className='text-error font-semibold mt-2 text-center mb-0'>{errors.phone}</p>
+              </div>              
+              {errors.phone && touched.phone ?(
+                  <p className="text-error font-semibold flex items-center  ml-4 mb-0">
+                  <MdError />
+                  {errors.phone}
+                </p>
+                ): null}
+                
 
-              </div>
-              
               {/* <div className="gender my-2">
                 <label className="text-left text-xl pl-4 pb-10">
                   Select your Gender
@@ -134,10 +151,15 @@ function signup() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                </label>
-                <p className='text-error font-semibold mt-2 text-center mb-0'>{errors.password}</p>
-
+                </label>              
               </div>
+              {errors.password && touched.password ?(
+                  <p className="text-error font-semibold flex items-center  ml-4 mb-0">
+                  <MdError />
+                   {errors.password}
+                </p>
+                ): null}
+                
               <div className="confirm-password">
                 <label class="relative block">
                   <span class="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
@@ -154,9 +176,14 @@ function signup() {
                     onBlur={handleBlur}
                   />
                 </label>
-                <p className='text-error font-semibold mt-2 text-center mb-0'>{errors.confirmPassword}</p>
-
+                
               </div>
+              {errors.confirmPassword && touched.confirmPassword ?(
+                  <p className="text-error font-semibold flex items-center ml-4 mb-0">
+                  <MdError />
+                   {errors.confirmPassword}
+                </p>
+                ): null}
 
               <div className="depart">
                 <label class="relative block">
@@ -164,26 +191,33 @@ function signup() {
                     <RiBankFill className="text-3xl text-myApp" />
                   </span>
                   <select className="italic border-slate-300  rounded-full py-4 pl-14 w-full font-bold text-sm shadow-xl shadow-myApp focus:outline-none focus:border-myApp  focus:ring-4">
-                   <option  selected>Pick your favorite language</option>
-  <option>Java</option>
-  <option>Go</option>
-  <option>C</option>
-  <option>C#</option>
-  <option>C++</option>
-  <option>Rust</option>
-  <option>JavaScript</option>
-  <option>Python</option>
-</select>
+                    <option selected>Pick your favorite language</option>
+                    <option>Java</option>
+                    <option>Go</option>
+                    <option>C</option>
+                    <option>C#</option>
+                    <option>C++</option>
+                    <option>Rust</option>
+                    <option>JavaScript</option>
+                    <option>Python</option>
+                  </select>
                 </label>
               </div>
-              
-              <button type='submit' className="btn  rounded-full font-bold text-lg w-40 mx-auto bg-myApp text-base-100">
-               Signup
+
+              <button
+                type="submit"
+                className="btn  rounded-full font-bold text-lg w-40 mx-auto bg-myApp text-base-100"
+              >
+                Signup
               </button>
             </div>
           </form>
-          <p className='my-5'>Already have an account? <span className='text-myApp text-lg text-bold pl-2 underline'><Link href='/login'>Login</Link></span> </p>
-
+          <p className="my-5">
+            Already have an account?
+            <span className="text-myApp text-lg text-bold pl-2 underline">
+              <Link href="/login">Login</Link>
+            </span>
+          </p>
         </div>
       </div>
     </div>

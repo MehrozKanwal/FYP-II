@@ -21,15 +21,17 @@ fullName: "",
 email: "",
 phone: "",
 password: "",
-confirmPassword: ""}
+confirmPassword: "",
+department: ""
+}
 
 function signup() {
   const {values,handleBlur,handleSubmit,touched,errors,handleChange} = useFormik({
-    initialValues: initialValues,
+    initialValues,
     validationSchema: signupSchema,
-    onSubmit : (values) => {
+    onSubmit : (values, action) => {
       console.log("values", values);
-      
+      action.resetForm()
     }
 
   })
@@ -43,17 +45,17 @@ function signup() {
         </div>
         <div className="su-right bg-base-200 rounded-r-xl py-5 flex-auto flex w-full flex-col items-center justify-center h-fit mx-auto">
           <form onSubmit={handleSubmit}>
-            <Image src={logo} className="w-60" />
+            <Image alt='signuplogo' src={logo} className="w-60" />
             <h1 className="text-3xl font-bold m-3">Create your Account</h1>
             <div className="flex gap-5 flex-col">
               <div className="full-Name">
                 {/* <label className='text-left text-xl pl-4 my-10'>Full Name</label> */}
-                <label class="relative block">
-                  <span class="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
+                <label className="relative block">
+                  <span className="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
                     <FaUserCircle className="text-3xl text-myApp" />
                   </span>
                   <input
-                    class="placeholder:italic placeholder:text-slate-400 block bg-white   border-slate-300 
+                    className="placeholder:italic placeholder:text-slate-400 block bg-white   border-slate-300 
               rounded-full py-4 pl-14 w-full font-bold text-sm shadow-xl shadow-myApp focus:outline-none focus:border-myApp  focus:ring-4 "
                     placeholder="Enter your Full Name"
                     type="text"
@@ -72,12 +74,12 @@ function signup() {
                 ): null}
               <div className="e-mail">
                 {/* <label className='text-left text-xl pl-4 my-10'> E-mail</label> */}
-                <label class="relative block">
-                  <span class="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
+                <label className="relative block">
+                  <span className="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
                     <HiMail className="text-3xl text-myApp" />
                   </span>
                   <input
-                    class="placeholder:italic placeholder:text-slate-400 block bg-white   border-slate-300 
+                    className="placeholder:italic placeholder:text-slate-400 block bg-white   border-slate-300 
               rounded-full py-4 pl-14 w-full font-bold text-sm shadow-xl shadow-myApp focus:outline-none focus:border-myApp  focus:ring-4 "
                     placeholder="Enter your E-mail"
                     type="email"
@@ -96,12 +98,12 @@ function signup() {
                 ): null}
               <div className="phone">
                 {/* <label className='text-left text-xl pl-4 my-10'>Phone</label> */}
-                <label class="relative block">
-                  <span class="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
+                <label className="relative block">
+                  <span className="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
                     <FaPhoneAlt className="text-2xl text-myApp" />
                   </span>
                   <input
-                    class="placeholder:italic placeholder:text-slate-400 block bg-white   border-slate-300 
+                    className="placeholder:italic placeholder:text-slate-400 block bg-white   border-slate-300 
               rounded-full py-4 pl-14 w-full font-bold text-sm shadow-xl shadow-myApp focus:outline-none focus:border-myApp  focus:ring-4 "
                     placeholder="Enter your Phone Number"
                     type="text"
@@ -124,7 +126,7 @@ function signup() {
                 <label className="text-left text-xl pl-4 pb-10">
                   Select your Gender
                 </label>
-                <label class="relative block">
+                <label className="relative block">
                   <input
                     type="radio"
                     name="radio-1"
@@ -137,12 +139,12 @@ function signup() {
                 </label>
               </div> */}
               <div className="password my-2">
-                <label class="relative block">
-                  <span class="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
+                <label className="relative block">
+                  <span className="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
                     <FaUnlockAlt className="text-2xl text-myApp" />
                   </span>
                   <input
-                    class="placeholder:italic placeholder:text-slate-400 block bg-white   border-slate-300 
+                    className="placeholder:italic placeholder:text-slate-400 block bg-white   border-slate-300 
               rounded-full py-4 pl-14 w-full font-bold text-sm shadow-xl shadow-myApp focus:outline-none focus:border-myApp  focus:ring-4 "
                     placeholder="Enter your Password"
                     type="password"
@@ -161,8 +163,8 @@ function signup() {
                 ): null}
                 
               <div className="confirm-password">
-                <label class="relative block">
-                  <span class="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
+                <label className="relative block">
+                  <span className="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
                     <FaUnlockAlt className="text-3xl text-myApp" />
                   </span>
                   <input
@@ -186,23 +188,27 @@ function signup() {
                 ): null}
 
               <div className="depart">
-                <label class="relative block">
-                  <span class="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
+                <label className="relative block">
+                  <span className="absolute inset-y-0 text-xl flex items-center pl-4 pr-4">
                     <RiBankFill className="text-3xl text-myApp" />
                   </span>
-                  <select className="italic border-slate-300  rounded-full py-4 pl-14 w-full font-bold text-sm shadow-xl shadow-myApp focus:outline-none focus:border-myApp  focus:ring-4">
-                    <option selected>Pick your favorite language</option>
-                    <option>Java</option>
-                    <option>Go</option>
-                    <option>C</option>
-                    <option>C#</option>
-                    <option>C++</option>
-                    <option>Rust</option>
-                    <option>JavaScript</option>
-                    <option>Python</option>
+                  <select className=" italic border-slate-300  rounded-full py-4 pl-14 w-full font-bold text-sm shadow-xl shadow-myApp focus:outline-none focus:border-myApp  focus:ring-4"
+                  name='department' value={values.department}
+                  onChange={handleChange}
+                    onBlur={handleBlur}
+                  >
+                    <option value="" selected disabled>Pick your Department</option>
+                    <option value="wool">Wool</option>
+                    <option value="cloth">Cloth</option>
                   </select>
                 </label>
               </div>
+              {errors.department && touched.department ?(
+                  <p className="text-error font-semibold flex items-center ml-4 mb-0">
+                  <MdError />
+                   {errors.department}
+                </p>
+                ): null}
 
               <button
                 type="submit"

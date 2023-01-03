@@ -7,7 +7,7 @@ import { RiNotification2Fill,RiLogoutCircleRFill } from "react-icons/ri";
 function Navbar() {
   return (
     <div className=''>
-    <div className="navbar bg-base-100 shadow-lg shadow-myApp p-2 px-10 ">
+    <div className="navbar bg-base-100 shadow-md shadow-myApp p-2 px-10 ">
   <div className="flex-1">
    <Image src={Klogo} className="w-52" />
   </div>

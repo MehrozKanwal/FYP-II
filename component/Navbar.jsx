@@ -21,7 +21,6 @@ function Navbar() {
     <button className="btn btn-ghost btn-circle">
       <div className="indicator">
       <RiLogoutCircleRFill className='text-3xl text-myApp font-bolder' />
-              <span className="badge badge-xs badge-primary indicator-item"></span>
       </div>
     </button>
   </div>

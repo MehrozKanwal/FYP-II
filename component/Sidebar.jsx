@@ -11,36 +11,36 @@ function Sidebar() {
       
         <div className='sidebar-menu '>
         <div className=''>
-            <IoIosArrowDroprightCircle  className={`text-3xl left-64 ${open && 'rotate-180' } m-1 ml-6 cursor-pointer`} onClick={() => setOpen(!open)}/>
+            <IoIosArrowDroprightCircle  className={`text-3xl left-64 ${open && 'rotate-180' } m-1 ml-6 cursor-pointer text-myApp`} onClick={() => setOpen(!open)}/>
         </div>
             <ul className='text-lg cursor-pointer font-semibold'>
-            <li></li>
+        
                 <li className='flex flex-wrap items-center text-myApp hover:border-l-4 border-x-gray  hover:shadow-md hover:shadow-gray gap-2  p-3 pl-7 hover:bg-myApp hover:text-white'>
-                <FaUser className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' }`}>Profile</span>
+                <FaUser className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Profile</span>
                 </li>
                 <li className='flex flex-wrap items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 my-2 p-3 pl-7 hover:bg-myApp hover:text-white'>
-                <MdOutlineFavorite className={`text-2xl`}/> <span className={`${!open ? 'hidden' : 'display' }`}>Favourite</span>
+                <MdOutlineFavorite className={`text-2xl`}/> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Favourite</span>
                 </li>
                 <li className='flex items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 my-2 p-3 pl-7 hover:bg-myApp hover:text-white'>
-                <MdMessage className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' }`}>Messages</span>
+                <MdMessage className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Messages</span>
                 </li>
                 <li className='flex items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 my-2 p-3 pl-7 hover:bg-myApp hover:text-white'>
-                <MdReviews className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' }`}>Ratings and Reviews</span>
+                <MdReviews className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Ratings and Reviews</span>
                 </li>
                 <li className='flex items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 my-2 p-3 pl-7 hover:bg-myApp hover:text-white'>
-                <MdGroups className='text-3xl'/> <span className={`${!open ? 'hidden' : 'display' }`}>Groups</span>
+                <MdGroups className='text-3xl'/> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Groups</span>
                 </li>
                 <li className='flex items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 my-2 p-3 pl-7 hover:bg-myApp hover:text-white'>
-                <IoAnalyticsSharp className='text-2xl' /> <span className={`${!open ? 'hidden' : 'display' }`}>Analytics</span>
+                <IoAnalyticsSharp className='text-2xl' /> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Analytics</span>
                 </li>
                 <li className='flex items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 my-2 p-3 pl-7 hover:bg-myApp hover:text-white'>
-                <IoNotificationsSharp className='text-2xl' /> <span className={`${!open ? 'hidden' : 'display' }`}>Notifications</span>
+                <IoNotificationsSharp className='text-2xl' /> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Notifications</span>
                 </li>
                 <li className='flex items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 my-2 p-3 pl-7 hover:bg-myApp hover:text-white'>
-                <FaUsers className='text-2xl' /> <span className={`${!open ? 'hidden' : 'display' }`}>My Networks</span>
+                <FaUsers className='text-2xl' /> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>My Networks</span>
                 </li>
                 <li className='flex items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 p-3 pl-7  hover:bg-myApp hover:text-white'>
-                <IoSettingsSharp className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' }`}>Account Settings</span>
+                <IoSettingsSharp className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Account Settings</span>
                 </li>
             </ul>
         </div>

@@ -3,7 +3,7 @@ import { MdDelete,MdModeEdit } from "react-icons/md";
 
 function Order() {
   return (
-    <div className=" font-normal">
+    <div className=" font-normal w-full overflow-x-scroll scrollbar">
     <table className="table table-compact w-full ">
       <thead>
         <tr>

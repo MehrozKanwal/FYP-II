@@ -14,8 +14,7 @@ function Sidebar() {
             <IoIosArrowDroprightCircle  className={`text-3xl left-64 ${open && 'rotate-180' } m-1 ml-6 cursor-pointer text-myApp`} onClick={() => setOpen(!open)}/>
         </div>
             <ul className='text-lg cursor-pointer font-semibold'>
-        
-                <li className='flex flex-wrap items-center text-myApp hover:border-l-4 border-x-gray  hover:shadow-md hover:shadow-gray gap-2  p-3 pl-7 hover:bg-myApp hover:text-white'>
+                <li className='flex flex-wrap items-center text-myApp hover:border-l-4 border-x-gray  hover:shadow-md hover:shadow-gray gap-2  p-3 pl-7 hover:bg-myApp hover:text-white tooltip  tooltip-right'  data-tip="Profile">
                 <FaUser className='text-2xl'/> <span className={`${!open ? 'hidden' : 'display' } text-sm`}>Profile</span>
                 </li>
                 <li className='flex flex-wrap items-center text-myApp hover:shadow-md hover:shadow-gray  hover:border-l-4 border-x-gray  gap-2 my-2 p-3 pl-7 hover:bg-myApp hover:text-white'>

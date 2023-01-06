@@ -13,7 +13,7 @@ function PurchaseOrder() {
 <div>
 <button className='btn bg-myApp gap-1'> <IoIosAddCircle /> New</button>
 </div>
-<div>    <input type="search" placeholder="Search here" className="input text-sm input-bordered input-myApp w-full max-w-xs" />
+<div>    <input type="search" placeholder="Search here" className="input text-sm input-bordered  input-myApp w-full max-w-xs placeholder:text-myApp" />
 </div>
 </div>
   <Order />

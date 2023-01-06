@@ -1,5 +1,7 @@
 import React from 'react'
-import { IoIosAddCircle} from "react-icons/io";
+import { IoIosAddCircle,} from "react-icons/io";
+import { ImSearch } from "react-icons/im";
+
 import Order from '../component/Order';
 
 function PurchaseOrder() {
@@ -13,7 +15,9 @@ function PurchaseOrder() {
 <div>
 <button className='btn bg-myApp gap-1'> <IoIosAddCircle /> New</button>
 </div>
-<div>    <input type="search" placeholder="Search here" className="input text-sm input-bordered  input-myApp w-full max-w-xs placeholder:text-myApp" />
+<div className='flex items-center gap-2'>   
+<ImSearch className=' text-myApp relative  text-3xl' />
+ <input type="search" placeholder="Search here" className="input text-sm input-bordered  input-myApp w-full max-w-xs  placeholder:text-myApp" />
 </div>
 </div>
   <Order />
